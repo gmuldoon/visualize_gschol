@@ -7,6 +7,8 @@ This set of scripts is an extension of work developed and shared at http://tuxet
 ######1. Install R or Rstudio.
 ######2. On an R command line in the directory with the set of scripts:
 ~~~
+setwd('/path/to/visualize_gschol')
+source('./visualize_gschol.R',local=TRUE)
 visualize_gschol("authorid","lastname")   
 ~~~
 ######where authorid is the personal identifier in a Google Scholar profile url (for Richard Feynman: B7vSqZsAAAAJ) and lastname is the last name of the scholar (for Richard Feynman: Feynman)   
