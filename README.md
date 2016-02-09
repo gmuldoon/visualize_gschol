@@ -13,4 +13,4 @@ visualize_gschol("authorid","lastname")
 ~~~
 ######where authorid is the personal identifier in a Google Scholar profile url (for Richard Feynman: B7vSqZsAAAAJ) and lastname is the last name of the scholar (for Richard Feynman: Feynman)   
 ######3. Plots will be output to the same directory where the scripts are run.
-######4. Plots and output files are customizable from the plot_*.R scripts. 
+######4. Plots and filenames are customizable from the plot_*.R scripts. The output directory is customizable from visualize_gschol.R. 

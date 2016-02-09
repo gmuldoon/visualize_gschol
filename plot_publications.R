@@ -1,7 +1,7 @@
 plot_publications = function(all_publications,lastname) {
     
     #Plot number of papers published per year and output the file
-    outfile<-paste('scholar_papers_peryear_',lastname,'_',authorid,'.png',sep="")
+    outfile<-paste(outdir,lastname,'_papers_peryear_',authorid,'.png',sep="")
     png(outfile,width=800,height=300,res=150,bg="transparent")
     all_publications <- na.omit(all_publications)
     plot.pub <- ggplot(data=all_publications,aes(all_publications$year))+
@@ -16,7 +16,7 @@ plot_publications = function(all_publications,lastname) {
     #ggsave(outfile,plot=plot.pub)
     
     #Plot the number of citations per year and output the file 
-    outfile<-paste('scholar_citations_peryear_',lastname,'_',authorid,'.png',sep="")
+    outfile<-paste(outdir,lastname,'_citations_peryear_',authorid,'.png',sep="")
     png(outfile,width=800,height=300,res=150,bg="transparent")
     plot.cite <- ggplot(all_publications,aes(x=year,y=cites))+
         geom_bar(stat='identity')+
@@ -29,7 +29,7 @@ plot_publications = function(all_publications,lastname) {
     #
     
     #Plot the number of citations per paper per year and output file
-#     outfile<-paste('scholar_citations_perpaper_peryear_',lastname,'_',authorid,'.png',sep="")
+#     outfile<-paste(outdir,lastname,'_citations_perpaper_peryear_',authorid,'.png',sep="")
 #     png(outfile,width=800,height=300,res=150,bg="transparent")
 #     plot.cite <- ggplot(all_publications,aes(x=year,y=cites))+
 #         geom_bar(stat='identity',position="stack",data=all_publications$pid)+
@@ -38,15 +38,7 @@ plot_publications = function(all_publications,lastname) {
 #     print(plot.cite)
 #     dev.off()
     
-    #Plot the papers per journal and output the file 
-    outfile<-paste('scholar_cites_perjournal_',lastname,'_',authorid,'.png',sep="")
-    png(outfile,width=800,height=300,res=150,bg="transparent")
-    plot.cite <- ggplot(all_publications,aes(x=reorder(journal,-cites),y=cites))+
-        geom_bar(stat='identity')+
-        theme_classic()+
-        labs(title="Citations per year",x="Year of citation",y="No. cites")
-    print(plot.cite)
-    dev.off()
+
     
     
     

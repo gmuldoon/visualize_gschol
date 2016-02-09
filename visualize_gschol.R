@@ -1,5 +1,9 @@
 visualize_gschol = function(authorid,lastname) {
 
+outdir = "./figs/"
+if (!dir.exists(outdir)){
+    dir.create(outdir)
+}
 #Load up required libraries. These will in turn automatically install dependencies
 library(scholar)
 library(ggplot2)
@@ -13,6 +17,7 @@ source('./get_all_abstracts.R',local=TRUE)
 source('./get_abstract.R',local=TRUE)
 source('./plot_publications.R',local=TRUE)
 source('./plot_authors.R',local=TRUE)
+source('./plot_journals.R',local=TRUE)
 source('./plot_wordcloud.R',local=TRUE)
 
 
@@ -66,7 +71,10 @@ if (!exists("all_publications") | idchange){
 plot_publications(all_publications,lastname)
 
 #Plot some stuff about the authors
-plot_authors(main_authors)
+#plot_authors(main_authors)
+
+#Plot stuff to do with journals
+plot_journals(all_publications)
 
 #####PLOT H INDEX OVER TIME
 #####PLOT histogram of journals
