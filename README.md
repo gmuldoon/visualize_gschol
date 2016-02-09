@@ -7,6 +7,6 @@
 ######1. Install R or Rstudio.
 ######2. On an R command line in the directory with the set of scripts:
    > visualize_gschol("authorid","lastname")
-   where authorid is the personal identifier in a Google Scholar profile url (for Richard Feynman: B7vSqZsAAAAJ) and lastname is the last name of the scholar (for Richard Feynman: Feynman)
+######where authorid is the personal identifier in a Google Scholar profile url (for Richard Feynman: B7vSqZsAAAAJ) and lastname is the last name of the scholar (for Richard Feynman: Feynman)
 ######3. Plots will be output to the same directory where the scripts are run.
 ######4. Plots and output file names are customizable from the plot_*.R scripts. 
