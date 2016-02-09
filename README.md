@@ -1,8 +1,7 @@
 #visualize_gschol
-#Gail Muldoon
+##Gail Muldoon
 
-### This set of scripts is an extension of work developed and shared at http://tuxette.nathalievilla.org/?p=1682 which was originally inspired by the googleCite.R script (on github and at http://biostat.jhsph.edu/~jleek/code/googleCite.r) and also this post: http://rogiersbart.blogspot.fr/2015/05/put-google-scholar-citations-on-your.html. See the latter post for
-information on how to automatically update this information on your personal website. 
+#### This set of scripts is an extension of work developed and shared at http://tuxette.nathalievilla.org/?p=1682 which was originally inspired by the googleCite.R script (on github and at http://biostat.jhsph.edu/~jleek/code/googleCite.r) and also this post: http://rogiersbart.blogspot.fr/2015/05/put-google-scholar-citations-on-your.html. See the latter post for information on how to automatically update this information on your personal website. 
 
 To Use:
 1. Install R or Rstudio.
