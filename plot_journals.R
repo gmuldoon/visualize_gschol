@@ -1,6 +1,7 @@
 plot_journals = function(all_publications,outdir) {
-    
-    npubs<-25 #plot the N publications with the highest citation count
+    if (length(all_publications$journal) >= 25){
+        npubs <- 25}#plot the N publications with the highest citation count
+    else{ npubs = length(all_publications$journal)}
     all_publications <- na.omit(all_publications)
     
     #Plot the papers per journal and output the file 

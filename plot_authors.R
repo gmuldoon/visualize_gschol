@@ -1,5 +1,7 @@
 plot_authors = function(main_authors,outdir) {
-    nauthor <- 25
+    if (length(main_authors) >= 25){
+        nauthor <- 25}
+    else{ nauthor = length(main_authors)}
 #     top_nauthors <- sort(main_authors)
 #     df.top_authors <- data.frame(top_authors)
 #     outfile<-paste(outdir,lastname,'_coauthor_freq_',authorid,'.png',sep="")

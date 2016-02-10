@@ -1,6 +1,6 @@
-visualize_gschol = function(authorid,lastname) {
-#Ex: visualize_gschol("2-g4_DkAAAAJ","Dalziel")
-    #visualize_gschol('vouGfd8AAAAJ','Quinn')
+visualize_gscholar = function(authorid,lastname) {
+#Ex: visualize_gscholar("2-g4_DkAAAAJ","Dalziel")
+    #visualize_gscholar('vouGfd8AAAAJ','Quinn')
 outdir = "./figs/"
 if (!dir.exists(outdir)){
     dir.create(outdir)
@@ -63,8 +63,7 @@ source('./plot_abstracts.R',local=TRUE)
     # deduce the term frequencies
     words_freq = apply(matrix_terms_freq, 2, sum)
     # keep only the most frequent (appear more than 10 times)
-    important = words_freq[words_freq > 10]
-
+    important = words_freq[words_freq > 5]
     important[[1]]<- 0 #this is a hack to get rid of the word "abstract" which is always highest
 #}
 
