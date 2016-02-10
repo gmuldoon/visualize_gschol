@@ -2,6 +2,7 @@ plot_publications = function(all_publications,lastname,outdir) {
     
     #Plot number of papers published per year and output the file
     outfile<-paste(outdir,lastname,'_papers_peryear_',authorid,'.png',sep="")
+    if (file.exists(outfile)){ file.rename(outfile,paste(outfile,'~',sep=""))}
     png(outfile,width=800,height=300,res=150,bg="transparent")
     all_publications <- na.omit(all_publications)
     plot.pub <- ggplot(data=all_publications,aes(all_publications$year))+
@@ -17,6 +18,7 @@ plot_publications = function(all_publications,lastname,outdir) {
     
     #Plot the number of citations per year and output the file 
     outfile<-paste(outdir,lastname,'_cites_peryear_',authorid,'.png',sep="")
+    if (file.exists(outfile)){ file.rename(outfile,paste(outfile,'~',sep=""))}
     png(outfile,width=800,height=300,res=150,bg="transparent")
     plot.cite <- ggplot(all_publications,aes(x=year,y=cites))+
         geom_bar(stat='identity')+

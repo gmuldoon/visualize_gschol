@@ -1,5 +1,6 @@
 visualize_gschol = function(authorid,lastname) {
 #Ex: visualize_gschol("2-g4_DkAAAAJ","Dalziel")
+    #visualize_gschol('vouGfd8AAAAJ','Quinn')
 outdir = "./figs/"
 if (!dir.exists(outdir)){
     dir.create(outdir)
@@ -20,15 +21,15 @@ source('./plot_authors.R',local=TRUE)
 source('./plot_journals.R',local=TRUE)
 source('./plot_abstracts.R',local=TRUE)
 
-#Edit to take more than one my_id
-#Check if the authorid has changed since last time this was run this session    
-idchange <- FALSE
-if (exists("my_id")){
-    if (my_id != authorid){
-        idchange <- TRUE}}
+##Edit to take more than one my_id
+##Check if the authorid has changed since last time this was run this session    
+#idchange <- FALSE
+#if (exists("my_id")){
+#    if (my_id != authorid){
+#        idchange <- TRUE}}
 
-# If all_publications doesn't exist or there's been an id change, redo the extraction    
-if (!exists("all_publications") | idchange){
+## If all_publications doesn't exist or there's been an id change, redo the extraction    
+#if (!exists("all_publications") | idchange){
     my_id <- authorid
     
     # Extract publication info 
@@ -61,11 +62,11 @@ if (!exists("all_publications") | idchange){
     colnames(matrix_terms_freq) = all_words
     # deduce the term frequencies
     words_freq = apply(matrix_terms_freq, 2, sum)
-    # keep only the most frequent and after a bit of cleaning up (not shown) make the word cloud
+    # keep only the most frequent (appear more than 10 times)
     important = words_freq[words_freq > 10]
 
     important[[1]]<- 0 #this is a hack to get rid of the word "abstract" which is always highest
-}
+#}
 
 #Plot publications and citations over time
 plot_publications(all_publications,lastname,outdir)
@@ -76,13 +77,13 @@ plot_authors(main_authors,outdir)
 #Plot stuff to do with journals
 plot_journals(all_publications,outdir)
 
-#####PLOT H INDEX OVER TIME
-#####PLOT histogram of journals
-
+#Make a word cloud from abstracts
 plot_abstracts(authorid,lastname,important,outdir)
-#####DO A WORD CLOUD FROM TITLES
 
-assign("all_publications",all_publications,.GlobalEnv) 
-assign("my_id",my_id,.GlobalEnv)
-assign("important",important,.GlobalEnv)
+#Save time when tinkering on the same profile by saving things globally
+#assign("all_publications",all_publications,.GlobalEnv) 
+#assign("my_id",my_id,.GlobalEnv)
+#assign("important",important,.GlobalEnv)
+
+'Go check your figs folder!'
 }
