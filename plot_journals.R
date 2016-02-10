@@ -1,4 +1,4 @@
-plot_journals = function(all_publications) {
+plot_journals = function(all_publications,outdir) {
     
     npubs<-25 #plot the N publications with the highest citation count
     all_publications <- na.omit(all_publications)

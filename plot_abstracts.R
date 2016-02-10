@@ -1,4 +1,4 @@
-plot_wordcloud = function(authorid,lastname,important){
+plot_abstracts = function(authorid,lastname,important,outdir){
 
 ### Create a wordcloud with the top words from the author's paper abstracts. 
 outfile<-paste(outdir,lastname,'_abstract_wordcloud_',authorid,'.png',sep="")
