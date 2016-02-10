@@ -9,7 +9,7 @@ This set of scripts is an extension of work developed and shared at http://tuxet
 ~~~
 setwd('/path/to/visualize_gscholar')
 source('./visualize_gscholar.R',local=TRUE)
-visualize_gschol("authorid","lastname")   
+visualize_gscholar("authorid","lastname")   
 ~~~
 ######where authorid is the personal identifier in a Google Scholar profile url (for Richard Feynman: B7vSqZsAAAAJ) and lastname is the last name of the scholar (for Richard Feynman: Feynman)   
 ######3. Plots will be output to the same directory where the scripts are run.
