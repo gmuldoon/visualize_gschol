@@ -9,10 +9,12 @@ get_all_coauthors = function(my_id, me) {
     
     # remove "..." and yourself, whether or name is capitalized or not
     all_authors = all_authors[!(all_authors %in% c("..."))]
+
     me <- paste(toupper(substr(me, 1, 1)), substr(me, 2, nchar(me)), sep="")
     all_authors = all_authors[-grep(me, all_authors)]
     me <- toupper(me)
     all_authors = all_authors[-grep(me, all_authors)]
+
 #    me <- tolower(me)
 #    all_authors = all_authors[-grep(me, all_authors)]
     
